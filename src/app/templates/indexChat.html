@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Clientes</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='sidebar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='chatLLM.css') }}">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="profile-pic">
+        <img src="{{ url_for('static', filename='images/perfil.jpg') }}" alt="Perfil">
+      </div>
+      <a href="#" id="link-load-data">Load data</a>
+      <a href="#" id="link-clients" class="active">Clients</a>
+    </div>
+
+    <!-- Chat -->
+    <div class="chat-container page-content active" id="clients-view">
+      <div class="chat-header">
+        <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="chat-logo">
+      </div>
+
+      <div class="chat-box" id="chat-box"></div>
+
+      <!-- Formulario de mensajes y archivos -->
+      <form class="chat-form" enctype="multipart/form-data">
+
+        <input type="file" id="file-input" name="files" multiple accept="application/pdf" style="display:none;">
+
+        <button type="button" class="btn-upload" onclick="document.getElementById('file-input').click()">
+          <span class="material-icons">upload</span>
+        </button>
+
+        <input type="text" class="user-input" placeholder="Message">
+
+        <button type="submit" class="btn-send">Send</button>
+      </form>
+    </div>
+
+    <div class="chat-container page-content" id="load-data-view">
+      
+      <h2>Carga de Documentos</h2>
+      <p>Selecciona los archivos que deseas subir al sistema.</p>
+      
+      <input type="file" id="document-upload-input" multiple style="display: none;">
+      
+      <button type="button" class="btn-upload-page" onclick="document.getElementById('document-upload-input').click()">
+        <span class="material-icons">upload_file</span>
+        Seleccionar Archivos
+      </button>
+
+    </div>
+    
+  </div>
+
+  <script src="{{ url_for('static', filename='chatLLM.js') }}"></script>
+</body>
+</html>

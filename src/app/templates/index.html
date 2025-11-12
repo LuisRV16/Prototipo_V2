@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Focus</title>
+  <link rel="icon" href="{{ url_for('static', filename='images/favicon.png') }}" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+
+<body>    
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="nav-left">
+      <span>Buy</span>
+      <span>Rent</span>
+      <span>Sell</span>
+      <span>Find an Agent</span>
+    </div>
+
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
+    </div>
+
+    <div class="nav-right">
+      <span>Manage Rentals</span>
+      <span>Advertise</span>
+      <span>Help</span>
+      <a href="/login.html" class="sign-in-link">Login</a>
+    </div>
+
+    <div class="hamburger material-icons" id="hamburger">menu</div>
+  </div>
+
+  <!-- Móvil -->
+  <div class="mobile-menu" id="mobileMenu">
+    <span>Buy</span>
+    <span>Rent</span>
+    <span>Sell</span>
+    <span>Find an Agent</span>
+    <span>Login</span>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="headline-container">
+  <div class="overlay-blanco"></div>
+  <div class="contenido-flex">
+    <div class="texto">
+      <h2>FOCUS</h2>
+      <p>Find your place. Feel at home.</p>
+
+      <div class="buscador-direccion">
+        <span class="material-icons icono-busqueda">search</span>
+        <input
+          id="autocomplete"
+          type="text"
+          placeholder="Search by address, neighborhood, city or ZIP code"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+  </div>
+</section>
+
+
+<section class="seccion-dos-columnas">
+  <div class="contenedor-dos-columnas">
+    <div class="columna texto">
+      <h2>Get home recommendations</h2>
+      <p>Focus makes it easy — just ask our virtual assistant to find your dream home.</p>
+      <a href="chat.html" class="btn-chat">Virtual assistant</a>
+    </div>
+    <div class="columna imagen">
+      <img src="{{ url_for('static', filename='images/living room.jpeg') }}" alt="living room" />
+    </div>
+  </div>
+</section>
+
+<h2 class="titulo-seccion">See how Focus can help</h2>
+<section class="section-tarjetas">
+  <div class="tarjeta">
+    <div class="encabezado">
+      <img src="{{ url_for('static', filename='images/buy-home.png') }}" alt="Buy a home" />
+      <h3>Buy a home</h3>
+    </div>
+    <div class="contenido">
+      <p>With over 1 million+ homes for sale available on the website, Focus can match you with a house you will want to call home.</p>
+    </div>
+    <a href="#" class="btn-outline">Browse homes</a>
+  </div>
+
+  <div class="tarjeta">
+    <div class="encabezado">
+      <img src="{{ url_for('static', filename='images/rent-home.png') }}" alt="Rent a home" />
+      <h3>Rent a home</h3>
+    </div>
+    <div class="contenido">
+      <p>With 35+ filters and custom keyword search, Focus can help you easily find a home or apartment for rent that you'll love.</p>
+    </div>
+    <a href="#" class="btn-outline">See your options</a>
+  </div>
+
+  <div class="tarjeta">
+    <div class="encabezado">       
+      <img src="{{ url_for('static', filename='images/sell-home.png') }}" alt="Rent a home" />
+      <h3>Rent a home</h3>
+    </div>
+    <div class="contenido">
+      <p>We’re creating a seamless online experience – from shopping on the largest rental network, to applying, to paying rent.</p>
+    </div>
+    <a href="#" class="btn-outline">Find rentals</a>
+  </div>
+</section>
+
+  <script src="../Search/search.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBA7-qGO36sgOHBDAZFCoVR2j7q3ue7oQA&libraries=places&callback=initAutocomplete"
+    async
+    defer
+  ></script>
+
+<script>
+  const hamburger = document.getElementById("hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.classList.toggle("show");
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+venv/
+src/PDF/
+extras/
+src/.env
+src/LLM/temp_db
+src/LLM/texto_completo.txt

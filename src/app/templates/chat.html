@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<head>
+  <meta charset="UTF-8" />
+  <title>Chat Gemini</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesChat.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+</head>
+<body>
+  <div class="chat-container">
+    <div id="chat-box" class="chat-box"></div>
+
+    <form id="chat-form" class="chat-form">
+      <input
+        type="text"
+        id="user-input"
+        autocomplete="off"
+        placeholder="Message"
+        required
+      />
+      <button type="submit" class="btn-send">Send</button>
+    </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='chat.js') }}"></script>
+</body>
+</html>
